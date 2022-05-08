@@ -4,4 +4,4 @@
 
 | Website URL  |  [cms.lakmarket.store](http://cms.lakmarket.store "cms.lakmarket.store") |
 | ------------ | ------------ |
-| Credentials  | User Credentials : <br> - Username : TestUser <br> - Password: TestUser@123 <br><br> Admin Credentials : <br> - Username : TestAdmin <br> - Password: TestAdmin@123|
+| Credentials  | User Credentials [User Login | CMS](http://cms.lakmarket.store/login.php "User Login | CMS") <br> - Username : TestUser <br> - Password: TestUser@123 <br><br> Admin Credentials [Admin Login | CMS](http://cms.lakmarket.store/admin/login.php "Admin Login | CMS") <br> - Username : TestAdmin <br> - Password: TestAdmin@123|
