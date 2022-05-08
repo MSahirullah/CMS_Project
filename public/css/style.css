@@ -1,0 +1,110 @@
+.inputError {
+    color: red;
+    font-size: 14px;
+}
+
+#passwordInfoMSG {
+    font-size: 14px;
+    color: #838383;
+}
+
+.page-url, .delete-link, .password-info {
+    cursor: pointer;
+}
+
+#pageContent {
+    margin: 3rem 6rem 5rem 6rem;
+}
+#pageDesc{
+    margin-top: 1rem;
+    padding: 1rem 2rem 1rem 2rem;
+    background-color: whitesmoke;
+}
+
+#pageTitle{
+    font-size:20px;
+    font-weight: 600;
+}
+
+.mt-c2{
+    margin-top:2rem;
+}
+.image-preview-text{
+    color: #a7a7a7;
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem
+}
+
+.mr-0{
+    margin-right:0 !important
+}
+
+.text-right{
+    text-align: right !important;
+}
+.text-left{
+    text-align: left !important;
+}
+
+.mr-1{
+    margin-right:0.5rem;
+}
+
+[data-type="preview"] {
+    width: 100% !important;
+}
+
+.ratio-box {
+    width: 620px;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #919191;
+    color: white;
+    text-align: center;
+    padding: 0.5rem 1rem 0.5rem 3rem;
+    text-align: left;
+  }
+
+  .footer a{
+    font-size: 14px;
+    text-decoration: none;
+    color:white;
+    transition: 0.3s;
+  }
+
+  .footer a:hover{
+    opacity: 0.7;
+    transition: 0.3s;
+
+  }
+
+  .github-link{
+    position: absolute;
+    right: 0;
+    top: 5rem;
+    width: 50px;
+    height: 35px;
+    background-color: #494949;
+    border-radius: 7px 0px 0px 7px;
+    transition: 0.3s;
+  }
+
+
+  .github-link-div{
+    background-image: url(/public/img/github-logo.png);
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+    margin: 5px 13px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  }
+
+  .github-link:hover{
+      opacity: 0.9;
+      transition: 0.3s;
+  }
