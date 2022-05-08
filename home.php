@@ -1,12 +1,13 @@
 <?php
 session_start();
 
-$title = 'User Login | CMS';
+$title = 'Home | CMS';
 include 'layout.php';
 include 'services/pages/navPages.php';
 ?>
 
 <body>
+    <div id="loader" class="d-none"></div>
     <div class="container">
         <nav class="navbar navbar-expand-sm">
             <div class="container-fluid">
@@ -22,8 +23,9 @@ include 'services/pages/navPages.php';
                             echo '<li class="nav-item"> <span class="nav-link page-url" data-url="' . $page["url"] . '" > ' . $page["title"] . ' </span></li>';
                         } ?>
                     </ul>
-                    <a href="services/auth/users/userLogout.php" class="nav-link"><?php echo $_SESSION['user'] ?> (logout)</a>
                 </div>
+                <a href="services/auth/users/userLogout.php" class="nav-link"><?php echo $_SESSION['user'] ?> (logout <i class="fa fa-sign-out" aria-hidden="true"></i>)</a>
+
             </div>
         </nav>
         <hr class="mt-0">
@@ -51,6 +53,10 @@ include 'services/pages/navPages.php';
         $(document).ready(function() {
 
             $('.page-url').on('click', function() {
+
+                $("body").css("opacity", "0.5");
+                $("#loader").removeClass("d-none");
+
                 $(".page-url").each(function() {
                     $(this).css("font-weight", 400);
                 });
@@ -64,6 +70,8 @@ include 'services/pages/navPages.php';
                     success: function(data) {
                         page = JSON.parse((data));
                         if (page.pageData.title) {
+                            $("body").css("opacity", "1");
+                            $("#loader").addClass("d-none");
 
                             $("#welcomeContent").addClass("d-none");
                             $("#pageContent").removeClass('d-none');
@@ -71,7 +79,7 @@ include 'services/pages/navPages.php';
                             $("#pageTitle").text(page.pageData.title);
                             $("#pageTumbnail").attr("src", page.uploadedimage);
                             $("#pageTumbnail").attr("alt", page.pageData.title);
-                            $("#pageDesc").text(page.pageData.description);
+                            $("#pageDesc").html(page.pageData.description);
                         }
                     }
                 });

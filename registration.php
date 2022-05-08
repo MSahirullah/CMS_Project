@@ -25,7 +25,7 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]) {
                             unset($_SESSION["register_status"]);
                         } ?>
                         <div></div>
-                        <div class="row mb-3">
+                        <div class="row mb-2">
                             <div class="col-lg-6 ">
                                 <div class="form-group">
                                     <label class="mb-2" for="fname">First Name *</label>
@@ -42,7 +42,7 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]) {
                                 </div>
                             </div>
                         </div>
-                        <div class="row mb-4">
+                        <div class="row mb-2">
                             <div class="col-lg-6 ">
                                 <div class="form-group">
                                     <label class="mb-2" for="email"> Email Address *</label>
@@ -57,7 +57,7 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]) {
                                 </div>
                             </div>
                         </div>
-                        <div class="row mb-4">
+                        <div class="row mb-3">
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="mb-2" for="password_1"> Password *</label>

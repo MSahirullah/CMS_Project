@@ -26,16 +26,6 @@ class Page
             }
         }
 
-        /*if (isset($files['image']) && $files['image']) {
-            mkdir("../../public/post_images/" . $url . '/');
-            $target_dir = "../../public/post_images/" . $url . '/';
-            $target_file = $target_dir . basename($files["image"]["name"]);
-
-            if (move_uploaded_file($files["image"]["tmp_name"], $target_file)) {
-                $uploadedFile = "public/post_images/" . $url . "/" . basename($files["image"]["name"]);
-            }
-        }*/
-
         if ($title && $description && $url && $uploadedFile) {
 
             $new_page_sql = "INSERT INTO pages(title, description, url , image, status ) VALUES(:title, :description, :url, :image, :status)";
@@ -54,6 +44,7 @@ class Page
             Header("Location: /admin/pages/index.php");
             exit();
         }
+
         $_SESSION['page_status'] = ['alert-danger', 'Something went wrong, Please try again'];
         Header("Location: /admin/pages/index.php");
         exit();

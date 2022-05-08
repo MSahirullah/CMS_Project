@@ -34,16 +34,16 @@ if (!(isset($_SESSION["admin"]) && $_SESSION["admin"])) {
                         <label class="mb-2 form-label" for="title">Page Title </label>
                         <input type="text" class="form-control" placeholder="Title" name="title" id="title" onkeypress="return /[a-zA-Z ]/i.test(event.key)" autofocus required maxlength="100" value="<?php echo $pageDetails ?  $pageDetails['title'] : "" ?>">
                         <div id="titleError" class="d-none inputError"></div>
-                        <?php echo $pageDetails ?  '<input type="hidden" value="' . $_GET["url"] . '" name="url"' : "" ?>
+                        <?php echo $pageDetails ?  '<input type="hidden" value="' . $_GET["url"] . '" name="url"/>' : "" ?>
                     </div>
                 </div>
                 <div class="mb-3">
                     <div class="form-group">
                         <label class="mb-2 form-label" for="description">Page Description </label>
-                        <textarea rows="5" class="form-control" placeholder="Description" name="description" id="description" required maxlength="4500"><?php echo $pageDetails ?  $pageDetails['description'] : "" ?></textarea>
+                        <textarea class="form-control" placeholder="Description" name="description" id="description" required maxlength="4500"><?php echo $pageDetails ?  $pageDetails['description'] : "" ?></textarea>
                     </div>
                 </div>
-                <div class="row mb-4 m-0">
+                <div class="mb-4 m-0">
 
                     <div class="row" data-type="imagesloader_new" data-errorformat="Accepted file formats" data-errorsize="Maximum size accepted" data-errorduplicate="File already loaded" data-errormaxfiles="Maximum number of images you can upload" data-errorminfiles="Minimum number of images to upload" data-modifyimagetext="Modify immage">
 
@@ -63,7 +63,7 @@ if (!(isset($_SESSION["admin"]) && $_SESSION["admin"])) {
                                     <span class="fa fa-2x fa-spin fa-spinner"></span>
                                 </div>
                                 <img data-type="preview" class="btn btn-light ratio-img img-fluid p-0 image border dashed rounded" src="" style="display: none; cursor: default;">
-                                <span class="badge badge-pill badge-primary p-2 w-50 main-tag" style="display:none;">Main</span>
+                                <!-- <span class="badge badge-pill badge-primary p-2 w-50 main-tag" style="display:none;">Main</span> -->
                             </div>
 
                             <!-- Buttons -->
@@ -114,7 +114,6 @@ if (!(isset($_SESSION["admin"]) && $_SESSION["admin"])) {
                         </div>
 
                     </div>
-                    <div id="imageError" class="d-none inputError"></div>
 
                     <div class="form-group col-md-6 " style="display:none;">
                         <label for="image" class="form-label">Feature Image</label>
@@ -124,6 +123,8 @@ if (!(isset($_SESSION["admin"]) && $_SESSION["admin"])) {
                         <img src="<?php echo $pageDetails ? "../../" . $pageDetails['image'] : "" ?>" class="img-fluid rounded <?php echo $pageDetails ? "" : "d-none" ?>" alt="Responsive image" style="max-height:75px" width="100%" id="imagePreview">
                         <div id="imagePreviewText" class="image-preview-text border <?php echo $pageDetails ? "d-none" : "" ?>"> Select a feture image</div>
                     </div>
+                    <div id="imageError" class="d-none inputError"></div>
+
                 </div>
 
                 <div class="form-check form-switch mb-3">
@@ -142,6 +143,20 @@ if (!(isset($_SESSION["admin"]) && $_SESSION["admin"])) {
 
     <script src="/public/js/jquery.imagesloader-1.0.1.js"></script>
     <script>
+        $(document).ready(function() {
+            $('#description').summernote({
+                height: 120,
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'underline', 'clear']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['table', ['table']],
+                ]
+            });
+
+        });
+
         var auctionImagesEdit = [
             <?php if ($pageImage) { ?> {
                     "Url": "<?php echo $pageImage ?  $pageImage : '' ?>",
@@ -179,7 +194,7 @@ if (!(isset($_SESSION["admin"]) && $_SESSION["admin"])) {
                 $("#blobFileName").val(files[0]['FileName']);
                 $("#blobFileData").val(files[0]['Base64']);
             } else {
-                $("#imageError").text("Please Select Image");
+                $("#imageError").text("Please select an image.");
                 $("#imageError").removeClass("d-none");
                 return false;
             }

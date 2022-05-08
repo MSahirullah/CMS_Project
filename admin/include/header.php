@@ -26,10 +26,9 @@ session_start();
                             </a>
                         </li>
                     </ul>
-                    <form class="d-flex">
-                        <a href="/services/auth/admin/adminLogout.php" class="nav-link"><?php echo $_SESSION['admin'] ?> (logout)</a>
-                    </form>
                 </div>
+                <a href="/services/auth/admin/adminLogout.php" class="nav-link"><?php echo $_SESSION['admin'] ?> (logout <i class="fa fa-sign-out" aria-hidden="true"></i>)</a>
+
             </div>
         </nav>
         <hr class="mt-0">
