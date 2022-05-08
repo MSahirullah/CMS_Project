@@ -11,7 +11,7 @@ if (isset($_SESSION["admin"]) && $_SESSION["admin"]) {
 ?>
 
 <body>
-    <div class="row justify-content-center mx-0" style="margin-top:7rem">
+    <div class="row justify-content-center mx-0" style="margin-top:6rem">
         <div class="col-md-4">
             <div class="card shadow-sm">
                 <div class="card-header text-center">
@@ -49,5 +49,10 @@ if (isset($_SESSION["admin"]) && $_SESSION["admin"]) {
                 </div>
             </div>
         </div>
+    </div>
+    <div class="footer">
+        <a href="/login.php">
+            Login as User
+        </a>
     </div>
 </body>
